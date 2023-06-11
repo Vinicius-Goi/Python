@@ -1,0 +1,2 @@
+algo = input('Digite algo: ')
+print('Seu valor é do tipo {} \n{} para "Numerico" \n{} para "Alpha Numerico" \n{} para "Alfabetico" \n{} para "Maiúscula" \n{} para "Minúscula" \n{} para "Capitalizada" \nSó tem espaço? {}'.format(type(algo), algo.isnumeric(), algo.isalnum(), algo.isalpha(), algo.isupper(), algo.islower(), algo.istitle(), algo.isspace()))

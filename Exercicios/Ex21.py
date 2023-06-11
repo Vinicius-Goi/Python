@@ -1,0 +1,10 @@
+import pygame
+pygame.init()
+pygame.mixer.music.load('barone.mp3')
+pygame.mixer.music.play()
+input('Assim que o barone acabar de falar, digite algo: ')
+print('-----Proximo audio-----')
+pygame.mixer.music.load('Ex21.mp3')
+pygame.mixer.music.play()
+input('Aproveite o audio! :)')
+pygame.event.wait()
