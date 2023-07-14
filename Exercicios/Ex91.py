@@ -1,13 +1,27 @@
 from random import randrange
-continuar = ""
+    
+#Estética
 hist = list()
 user = dict()
-title = 'GERADOR DE DADOS'
 print('-='*15)
-print(f'{title:^30}')
+print(f'{"GERADOR DE DADOS DE RPG":^30}')
 print('-='*15)
-quant = int(input("Digite quantos jogadores rolarão o dado: "))
+
+
+#Entrada
+while True:
+    quant = input("Digite quantos jogadores rolarão o dado: ")
+    if quant[0].isnumeric():
+        quant = int(quant)
+        break
+    else:
+        print('-'*30)
+        print(f'\033[1:31m{"DIGITE UM NÚMERO VÁLIDO!":^30}\033[m')
+        print('-' * 30)
 print('-='*15)
+
+
+#Processamento
 for i in range(1, quant+1):
     title = '''[ 1 ] Dado d4
 [ 2 ] Dado d6
@@ -18,15 +32,16 @@ for i in range(1, quant+1):
 [ 7 ] Dado d100
 '''
     print(title)
-    user['Jogador'] = str(input('Nome do jogador: ')).capitalize()
-    user['Opcao'] = str(input('Escolha: '))
-    print('-=' * 30)
-    while user['Opcao'] not in '1234567':
-        print('\033[1:31mSELECIONE UMA OPÇÃO VALIDA!\033[m')
-        print('-=' * 30)
-        print(title)
+    user['Jogador'] = str(input('Nome do jogador: ')).capitalize().strip()
+
+    while True:
         user['Opcao'] = str(input('Escolha: '))
-        print('-=' * 30)
+        if user['Opcao'] not in "1234567":
+            print('\033[1:31mSELECIONE UMA OPÇÃO VÁLIDA!\033[m')
+            print('-=' * 30)
+        else:
+            break
+    print('-=' * 30)
 
     if user['Opcao'] == '1':
         cpu = randrange(1, 5)
@@ -67,6 +82,7 @@ for i in range(1, quant+1):
     hist.append(user.copy())
 
 
+#Saída
 print('-' * 59)
 title = "HISTÓRICO"
 print(f'{title:^59}')
