@@ -30,13 +30,14 @@ for i in range(1, quant+1):
 [ 5 ] Dado d12
 [ 6 ] Dado d20
 [ 7 ] Dado d100
-'''
-    print(title)
+[ 8 ] Dado customizável'''
     user['Jogador'] = str(input('Nome do jogador: ')).capitalize().strip()
+    print('-'*30)
+    print(title)
 
     while True:
         user['Opcao'] = str(input('Escolha: '))
-        if user['Opcao'] not in "1234567":
+        if user['Opcao'] not in "12345678":
             print('\033[1:31mSELECIONE UMA OPÇÃO VÁLIDA!\033[m')
             print('-=' * 30)
         else:
@@ -73,10 +74,41 @@ for i in range(1, quant+1):
         cpu = randrange(1, 21)
         user['Dados'] = cpu
 
-    else:
+    elif user['Opcao'] == '7':
         cpu = randrange(1, 101)
         user['Tipo'] = "D100"
         user['Dados'] = cpu
+
+    else:
+        while True:
+            quantL = input("Digite quantos lados o dado vai ter: ")
+            if quantL[0].isnumeric():
+                quantL = int(quantL)
+                break
+            else:
+                print('-'*30)
+                print(f'\033[1:31m{"DIGITE UM NÚMERO VÁLIDO!":^30}\033[m')
+                print('-' * 30)
+            
+        while True:
+            zero_um = input("O zero é uma possibilidade de resultado? [S/N] ")
+            if zero_um.isalpha():
+                if zero_um in "Ss":
+                    zero_um = 0
+                    break
+                elif zero_um in "Nn":
+                    zero_um = 1
+                    break
+            else:
+                print('\033[1:31mDIGITE UMA OPÇÃO VÁLIDA!\033[m')
+                print('-=' * 30)
+
+        cpu = randrange(zero_um, quantL)
+        quantL = str(quantL)
+        user['Tipo'] = "D"+quantL
+        user['Dados'] = cpu
+    
+
 
     del user['Opcao']
     hist.append(user.copy())
@@ -87,6 +119,7 @@ print('-' * 59)
 title = "HISTÓRICO"
 print(f'{title:^59}')
 print('-' * 59)
+
 
 print(f"{'Jogador':^20} | {'Tipo do Dado':^20} | {'Valor':^10}")
 for i in hist:
