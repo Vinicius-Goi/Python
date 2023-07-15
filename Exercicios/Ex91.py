@@ -1,11 +1,11 @@
 from random import randrange
-    
+
 #Estética
-hist = list()
-user = dict()
-print('-='*15)
-print(f'{"GERADOR DE DADOS DE RPG":^30}')
-print('-='*15)
+hist = []
+user = {}
+print('-='*30)
+print(f'{"GERADOR DE DADOS DE RPG":^60}')
+print('-='*30)
 
 
 #Entrada
@@ -15,10 +15,10 @@ while True:
         quant = int(quant)
         break
     else:
-        print('-'*30)
-        print(f'\033[1:31m{"DIGITE UM NÚMERO VÁLIDO!":^30}\033[m')
-        print('-' * 30)
-print('-='*15)
+        print('-='*30)
+        print(f'\033[1:31m{"DIGITE UM NÚMERO VÁLIDO!":^60}\033[m')
+        print('-=' * 30)
+print('-'*30)
 
 
 #Processamento
@@ -31,14 +31,15 @@ for i in range(1, quant+1):
 [ 6 ] Dado d20
 [ 7 ] Dado d100
 [ 8 ] Dado customizável'''
-    user['Jogador'] = str(input('Nome do jogador: ')).capitalize().strip()
+    user['Jogador'] = input('Nome do jogador: ').capitalize().strip()
     print('-'*30)
-    print(title)
-
     while True:
-        user['Opcao'] = str(input('Escolha: '))
+
+        print(title)
+        user['Opcao'] = input('Escolha: ')
         if user['Opcao'] not in "12345678":
-            print('\033[1:31mSELECIONE UMA OPÇÃO VÁLIDA!\033[m')
+            print('-=' * 30)
+            print(f'\033[1:31m{"SELECIONE UMA OPÇÃO VÁLIDA!":^60}\033[m')
             print('-=' * 30)
         else:
             break
@@ -86,9 +87,9 @@ for i in range(1, quant+1):
                 quantL = int(quantL)
                 break
             else:
-                print('-'*30)
-                print(f'\033[1:31m{"DIGITE UM NÚMERO VÁLIDO!":^30}\033[m')
-                print('-' * 30)
+                print('-='*30)
+                print(f'\033[1:31m{"DIGITE UM NÚMERO VÁLIDO!":^60}\033[m')
+                print('-=' * 30)
             
         while True:
             zero_um = input("O zero é uma possibilidade de resultado? [S/N] ")
@@ -100,8 +101,11 @@ for i in range(1, quant+1):
                     zero_um = 1
                     break
             else:
-                print('\033[1:31mDIGITE UMA OPÇÃO VÁLIDA!\033[m')
                 print('-=' * 30)
+                print(f'\033[1:31m{"DIGITE UMA OPÇÃO VÁLIDA!":^60}\033[m')
+                print('-=' * 30)
+
+        print('-='*30)
 
         cpu = randrange(zero_um, quantL)
         quantL = str(quantL)
@@ -109,9 +113,11 @@ for i in range(1, quant+1):
         user['Dados'] = cpu
     
 
-
     del user['Opcao']
     hist.append(user.copy())
+
+#ordenando a lista com base no resultado dos dados    
+hist = sorted(hist, key=lambda x: x['Dados'], reverse=True)
 
 
 #Saída
@@ -120,10 +126,11 @@ title = "HISTÓRICO"
 print(f'{title:^59}')
 print('-' * 59)
 
-
 print(f"{'Jogador':^20} | {'Tipo do Dado':^20} | {'Valor':^10}")
+print(f'{"-"*20:^20} | {"-"*20:^20} | {"-"*13:^10}')
 for i in hist:
     print(f"{i['Jogador']:^20} | {i['Tipo']:^20} | {i['Dados']:^10}")
 
-print("\n\033[31mSaindo...\033[m")
+print('-='*30)
+print("\033[31mSaindo...\033[m")
 print("\033[35mCódigo feito por Goi 2ºDS\033[m")
