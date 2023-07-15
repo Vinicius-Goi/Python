@@ -46,39 +46,32 @@ for i in range(1, quant+1):
     print('-=' * 30)
 
     if user['Opcao'] == '1':
-        cpu = randrange(1, 5)
         user['Tipo'] = "D4"
-        user['Dados'] = cpu
+        user['Dados'] = randrange(1, 5)
 
     elif user['Opcao'] == '2':
-        cpu = randrange(1, 7)
         user['Tipo'] = "D6"
-        user['Dados'] = cpu
+        user['Dados'] = randrange(1, 7)
 
     elif user['Opcao'] == '3':
         user['Tipo'] = "D8"
-        cpu = randrange(1, 9)
-        user['Dados'] = cpu
+        user['Dados'] = randrange(1, 9)
 
     elif user['Opcao'] == '4':
         user['Tipo'] = "D10"
-        cpu = randrange(1, 11)
-        user['Dados'] = cpu
+        user['Dados'] = randrange(1, 11)
 
     elif user['Opcao'] == '5':
         user['Tipo'] = "D12"
-        cpu = randrange(1, 13)
-        user['Dados'] = cpu
+        user['Dados'] = randrange(1, 13)
 
     elif user['Opcao'] == '6':
         user['Tipo'] = "D20"
-        cpu = randrange(1, 21)
-        user['Dados'] = cpu
+        user['Dados'] = randrange(1, 21)
 
     elif user['Opcao'] == '7':
-        cpu = randrange(1, 101)
         user['Tipo'] = "D100"
-        user['Dados'] = cpu
+        user['Dados'] = randrange(1, 101)
 
     else:
         while True:
@@ -107,10 +100,9 @@ for i in range(1, quant+1):
 
         print('-='*30)
 
-        cpu = randrange(zero_um, quantL)
         quantL = str(quantL)
         user['Tipo'] = "D"+quantL
-        user['Dados'] = cpu
+        user['Dados'] = randrange(zero_um, quantL)
     
 
     del user['Opcao']
