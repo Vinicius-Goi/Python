@@ -33,7 +33,6 @@ for i in range(1, quant + 1):
     user['Jogador'] = input('Nome do jogador: ').capitalize().strip()
     print('-' * 30)
     while True:
-
         print(title)
         user['Opcao'] = input('Escolha: ')
         if user['Opcao'] not in "12345678":
@@ -73,7 +72,7 @@ for i in range(1, quant + 1):
             user['Tipo'] = "D100"
             user['Dados'] = randrange(1, 101)
 
-        case _:
+        case '8':
             while True:
                 quantL = input("Digite quantos números o dado vai ter: ")
                 if quantL.find('.') != -1:
@@ -130,11 +129,14 @@ for i in range(1, quant + 1):
             quantL = int(quantL)
             user['Dados'] = randrange(zero_um, quantL)
 
+        case _:
+            pass
+
     del user['Opcao']
     hist.append(user.copy())
     cont = 0
 
-# ordenando a lista com base no resultado dos dados
+# Ordenando a lista com base no resultado dos dados
 hist = sorted(hist, key=lambda x: x['Dados'], reverse=True)
 
 # Saída
