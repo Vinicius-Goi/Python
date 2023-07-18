@@ -1,21 +1,32 @@
 from time import sleep
 def contador(inicio, fim, passo):
+    if passo < 0:
+        passo *= -1
+    if passo == 0:
+        passo == 1
+
     print('-='*30)
-    print('Contagem de {} até {} de {} em {}')
+    print(f'Contagem de {inicio} até {fim} de {passo} em {passo}')
+    sleep(2.5)
+    
     if inicio < fim:
-        for c in range(inicio, fim, passo):
+        c = inicio
+        while c <= fim:
             print(c, end=' ')
             sleep(0.5)
+            c += passo
         print('FIM!')
 
     else:
-        for c in range(fim, inicio, passo):
+        c = inicio
+        while c >= fim:
             print(c, end=' ')
             sleep(0.5)
+            c -= passo
         print('FIM!')
 
-contador(1, 11, 1)
-contador(10, -1, -2)
+contador(1, 10, 1)
+contador(10, 0, 2)
 
 print('-='*30)
 print('Agora é sua vez de personalizar a contagem!')
