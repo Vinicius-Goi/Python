@@ -128,6 +128,8 @@ for i in range(1, quant + 1):
             user['Tipo'] = "D" + quantL
             quantL = int(quantL)
             user['Dados'] = randrange(zero_um, quantL)
+            if user['Opcao'] == '8':
+                user['Tipo'] += "(C)"
 
         case _:
             pass
