@@ -1,11 +1,12 @@
-def area(larg, alt):
-    a = larg*alt
-    print(f'A área de um terreno {larg} x {alt} é de {a}m².')
+def area(larg, comp):
+    a = larg*comp
+    print(f'A área de um terreno {larg} x {comp} é de {a}m².')
 
 
+# Programa Principal
 print(f'{"Controle de Terrenos":^20}')
 print('-'*20)
 
 larg = float(input('LARGURA (m): '))
-alt = float(input('COMPRIMENTO (m): '))
-area(larg, alt)
+comp = float(input('COMPRIMENTO (m): '))
+area(larg, comp)
