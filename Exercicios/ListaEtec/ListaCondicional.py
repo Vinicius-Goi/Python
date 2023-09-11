@@ -1,3 +1,4 @@
+from math import sqrt
 #1. Faça um Programa que peça dois números e imprima o maior deles.
 '''
 num1= int(input("Digite o 1º número: "))
@@ -43,8 +44,8 @@ if letra not in "0123456789":
         print(f"A letra digitada, '{letra}', é uma consoante.")
 '''
 
-'''
 #5. Faça um programa para a leitura de duas notas parciais de um aluno. O programa deve calcular a média alcançada por aluno e apresentar:
+'''
 
     A mensagem "Aprovado", se a média alcançada for maior ou igual a sete;
 
@@ -290,23 +291,106 @@ match dia:
 """
 
 #14. Faça um programa que lê as duas notas parciais obtidas por um aluno numa disciplina ao longo de um semestre, e calcule a sua média. A atribuição de conceitos obedece à tabela abaixo.
-
+'''
 n1 = float(input("Digite a 1ª Nota: "))
 n2 = float(input("Digite a 2ª Nota: "))
 md = (n1+n2)/2
 
 if md >= 9 and md < 10:
     conce = "A"
-    print("APROVADO!")
+    print(f"APROVADO! Com o conceito: {conce}")
 elif md >= 7.5 and md < 9:
     conce  = "B"
-    print("APROVADO!")
+    print(f"APROVADO! Com o conceito: {conce}")
 elif md >= 6 and md < 7.5:
     conce = "C"
-    print("APROVADO!")
+    print(f"APROVADO! Com o conceito: {conce}")
 elif md >= 4 and md < 6:
     conce = "D"
-    print("REPROVADO!")
+    print(f"REPROVADO! Com o conceito: {conce}")
 elif md < 4:
     conce = "E"
-    print("REPROVADO!")
+    print(f"REPROVADO! Com o conceito: {conce}")
+'''
+
+#15. Faça um Programa que peça os 3 lados de um triângulo. O programa deverá informar se os valores podem ser um triângulo. Indique, caso os lados formem um triângulo, se o mesmo é: equilátero, isósceles ou escaleno
+"""
+l1 = float(input("Informe o 1º lado: "))
+l2 = float(input("Informe o 2º lado: "))
+l3 = float(input("Informe o 3º lado: "))
+
+if l1+l2 >= l3:
+    print("É possível fazer um triângulo", end=" ")
+    if l1 == l2 and l3 or l2 == l1 and l3 or l3 == l1 and l2:
+        print("equilátero!")
+    elif l1 == l2 or l3 or l2 == l1 or l3 or l3 == l1 or l2:
+        print("isósceles!")
+    elif l1 != l2 or l3:
+        print("escaleno!")  
+else:
+    print("Não é possível fazer um triângulo")
+"""
+
+#16. Faça um programa que calcule as raízes de uma equação do segundo grau, na forma ax2 + bx + c. O programa deverá pedir os valores de a, b e c e fazer as consistências, informando ao usuário nas seguintes situações.
+"""
+a = int(input("Informe A: "))
+if a != 0:
+    b = int(input("Informe B: "))
+    c = int(input("Informe C: "))
+    delta = b*b - (4*a*c)
+    if delta < 0:
+        print("Delta menor que zero! Programa encerrado...")
+    elif delta == 0:
+        x = -b/2*a
+        print(f"Por delta ser igual a 0, obtivemos uma raiz no qual o valor é: {x}")
+    else:
+        x1 = -b + sqrt(delta)
+        x2 = -b - sqrt(delta)
+        print(f"Por delta ser maior que 0, obtivemos duas raizes no qual o valor é: X1: {x1} e X2: {x2}")
+else:
+    print("A equação não é de segundo grau!")
+"""
+
+#17. Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto
+"""
+a = int(input('Coloque um ano para saber se ele é bissexto ou não: '))
+if a % 4 == 0 and a % 100 != 0 or a%400== 0:
+    print('O ano digitado ({}) é bissexto'.format(a))
+
+else:
+    print('O ano digitado ({}) não é bissexto'.format(a))
+"""
+
+#18. Programa que peça uma data no formato dd/mm/aaaa e determine se a mesma é uma data válida
+"""
+dia = int(input("Informe o dia: "))
+if dia > 31:
+    mes = int(input("Informe o mês: "))
+    if mes > 12:
+        ano = int(input("Informe o ano: "))
+        print(f"{dia}/{mes}/{ano}")
+"""
+
+#19. Faça um Programa que leia um número inteiro menor que 1000 e imprima a quantidade de centenas, dezenas e unidades do mesmo
+"""
+num = input("Informe um número menor que 1000: ")
+if num < "1000":
+    print(f"{num} = {num[0]} Centena(s), {num[1]} Dezena(s) e {num[2]} Unidade(s)")
+else:
+    print("Digite um número válido!")
+"""
+
+#20. Faça um Programa para leitura de três notas parciais de um aluno. O programa deve calcular a média alcançada por aluno e presentar
+'''
+nota1 = float(input("Digite a 1ª nota: "))
+nota2 = float(input("Digite a 2ª nota: "))
+
+media = (nota1 + nota2)/2
+
+if media == 10:
+    print(f"Aprovado com distinção com uma média de {media:.2f}!")
+elif media >= 7:
+    print(f'Aprovado com uma média de {media:.2f}!')
+else:
+    print(f"Reprovado com uma média de {media:.2f}!")
+'''
