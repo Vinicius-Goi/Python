@@ -1,3 +1,4 @@
+f = "Quero férias"
 print(f'{"/.count()/":-^45}')
 print(f'A frase "{f}" tem {f.count("r")} letras "r"')
 
