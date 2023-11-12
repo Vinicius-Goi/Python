@@ -1,4 +1,9 @@
-f = "Quero férias"
+f = "Queremos ter férias"
+print(f'{"/.find()/":-^45}')
+print(f'Frase: {f}')
+print(f'O trecho "remos" se inicia na {f.find("remos")}º casa')
+print(f'O trecho "er" se inicia na {f.find("er", 7, 12)}º casa\n')
+
 print(f'{"/.count()/":-^45}')
 print(f'A frase "{f}" tem {f.count("r")} letras "r"')
 
@@ -10,10 +15,6 @@ print(f'{"/=EXEÇÃO=/":-^45}')
 print(f'A frase "{f} tem {f.count("R")} letras "R"\n')
 
 
-print(f'{"/.find()/":-^45}')
-print(f'Frase: {f}')
-print(f'O trecho "remos" se inicia na {f.find("remos")}º casa')
-print(f'O trecho "er" se inicia na {f.find("er", 7, 12)}º casa\n')
 
 print(f'O trecho "vamos" se inicia na {f.find("vamos")}º casa\n')
 quantL = input("Digite quantos números o dado vai ter: ")
