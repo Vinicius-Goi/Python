@@ -1,8 +1,3 @@
-print(f'{"/len()/":-^45}')
-f = "Quero férias"
-print(f'A frase "{f}" tem {len(f)} caracteres (CONTANDO COM OS ESPAÇOS)\n')
-
-
 print(f'{"/.count()/":-^45}')
 print(f'A frase "{f}" tem {f.count("r")} letras "r"')
 
@@ -37,6 +32,9 @@ print(f'Frase: {f}')
 print("férias" in f)
 print("vamos" in f)
 
+print(f'{"/len()/":-^45}')
+f = "Quero férias"
+print(f'A frase "{f}" tem {len(f)} caracteres (CONTANDO COM OS ESPAÇOS)\n')
 
 print(f'{"/Exercício/":-^45}')
 print("""Faça um programa que leia uma frase digitada pelo usuário e mostre na tela:
