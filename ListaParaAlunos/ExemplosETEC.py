@@ -1,3 +1,9 @@
+f = "Queremos ter férias"
+print(f'{"/.find()/":-^40}')
+print(f'Frase: {f}')
+print(f'O trecho "remos" se inicia na {f.find("remos")}º casa')
+print(f'O trecho "er" se inicia na {f.find("er", 7, 12)}º casa\n')
+
 f = "Quero férias"
 print(f'{"/.count()/":-^40}')
 print(f'A frase "{f}" tem {f.count("r")} letras "r"')
@@ -9,11 +15,6 @@ print(f'A frase "{f} tem {f.count("e",0, 7)} letras "e"\n')
 print(f'{"/=EXEÇÃO=/":-^40}')
 print(f'A frase "{f} tem {f.count("R")} letras "R"\n')
 
-f = "Queremos ter férias"
-print(f'{"/.find()/":-^40}')
-print(f'Frase: {f}')
-print(f'O trecho "remos" se inicia na {f.find("remos")}º casa')
-print(f'O trecho "er" se inicia na {f.find("er", 7, 12)}º casa\n')
 
 
 
