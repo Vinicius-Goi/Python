@@ -1,3 +1,7 @@
+f = "Quero férias"
+print(f'{"/len()/":-^40}')
+print(f'A frase "{f}" tem {len(f)} caracteres (CONTANDO COM OS ESPAÇOS)\n')
+
 f="um tigre, dois tigres, três tigres"
 print(f'{"/.rfind()/":-^40}')
 print("Frase:", f)
@@ -38,9 +42,6 @@ print(f'Frase: {f}')
 print("férias" in f)
 print("vamos" in f)
 
-print(f'{"/len()/":-^40}')
-f = "Quero férias"
-print(f'A frase "{f}" tem {len(f)} caracteres (CONTANDO COM OS ESPAÇOS)\n')
 
 print(f'{"/Exercício/":-^40}')
 print("""Faça um programa que leia uma frase digitada pelo usuário e mostre na tela:
