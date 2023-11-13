@@ -1,3 +1,8 @@
+f="um tigre, dois tigres, três tigres"
+print(f'{"/.rfind()/":-^40}')
+print("Frase:", f)
+print(f"A palavra 'tigres' da direita para a esquerda está localizada na {f.rfind('tigres')}º casa\n")
+
 f = "Queremos ter férias"
 print(f'{"/.find()/":-^40}')
 print(f'Frase: {f}')
@@ -26,10 +31,6 @@ if quantL.find('.') != -1:
     print(f'\033[1:31m{"DIGITE UM NÚMERO INTEIRO!":^60}\033[m')
     print('-=' * 30)
 
-print(f'{"/.rfind()/":-^40}')
-f="um tigre, dois tigres, três tigres"
-print("Frase:", f)
-print(f"A palavra 'tigres' da direita para a esquerda está localizada na {f.rfind('tigres')}º casa\n")
 
 print(f'{"/in/":-^40}')
 f = "Queremos ter férias"
