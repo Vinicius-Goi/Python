@@ -8,8 +8,8 @@ print(f'A frase "{f} tem {f.count("e",0, 7)} letras "e"\n')
 
 print(f'{"/=EXEÇÃO=/":-^40}')
 print(f'A frase "{f} tem {f.count("R")} letras "R"\n')
-f = "Queremos ter férias"
 
+f = "Queremos ter férias"
 print(f'{"/.find()/":-^40}')
 print(f'Frase: {f}')
 print(f'O trecho "remos" se inicia na {f.find("remos")}º casa')
