@@ -18,6 +18,12 @@ print(f'{"/.find()/":-^40}')
 print(f'Frase: {f}')
 print(f'O trecho "remos" se inicia na {f.find("remos")}º casa')
 print(f'O trecho "er" se inicia na {f.find("er", 7, 12)}º casa\n')
+print(f'O trecho "vamos" se inicia na {f.find("vamos")}º casa\n')
+quantL = input("Digite quantos números o dado vai ter: ")
+if quantL.find('.') != -1:
+    print('-=' * 30)
+    print(f'\033[1:31m{"DIGITE UM NÚMERO INTEIRO!":^60}\033[m')
+    print('-=' * 30)
 
 f = "Quero férias"
 print(f'{"/.count()/":-^40}')
@@ -34,12 +40,6 @@ print(f'A frase "{f} tem {f.count("R")} letras "R"\n')
 
 
 
-print(f'O trecho "vamos" se inicia na {f.find("vamos")}º casa\n')
-quantL = input("Digite quantos números o dado vai ter: ")
-if quantL.find('.') != -1:
-    print('-=' * 30)
-    print(f'\033[1:31m{"DIGITE UM NÚMERO INTEIRO!":^60}\033[m')
-    print('-=' * 30)
 
 
 
