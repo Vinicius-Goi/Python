@@ -1,3 +1,9 @@
+f = "Queremos ter férias"
+print(f'{"/in/":-^40}')
+print(f'Frase: {f}')
+print("férias" in f)
+print("vamos" in f)
+
 f = "Quero férias"
 print(f'{"/len()/":-^40}')
 print(f'A frase "{f}" tem {len(f)} caracteres (CONTANDO COM OS ESPAÇOS)\n')
@@ -36,11 +42,6 @@ if quantL.find('.') != -1:
     print('-=' * 30)
 
 
-print(f'{"/in/":-^40}')
-f = "Queremos ter férias"
-print(f'Frase: {f}')
-print("férias" in f)
-print("vamos" in f)
 
 
 print(f'{"/Exercício/":-^40}')
